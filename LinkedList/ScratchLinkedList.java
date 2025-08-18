@@ -39,6 +39,31 @@ public class ScratchLinkedList{
             }
             currentHead.next = newNode;
         }
+        //Add in the middle 
+        public void addMiddle(int index, String data){
+          if(index > size && index < 0){
+             System.out.println("Invalid Index");
+             return;
+          }
+          size++;
+          Node newNode = new Node(data);
+          if (Head == null || index == 0) {
+              newNode.next = Head;
+              Head = newNode;
+              return;
+          }
+          Node curNode = Head;
+          for (int i = 0; i < size; i++) {
+             if (i == index) {
+              Node nextNode = curNode.next;
+              curNode.next = newNode;
+              newNode.next = nextNode;
+              break;
+             }
+             curNode = curNode.next;
+          }
+
+        }
         //Delete First Node
         public void deleteFirst(){
             if(Head == null){
@@ -136,8 +161,9 @@ public class ScratchLinkedList{
         list.printList();
         list.addLast("and");
         list.addLast("he");
-        list.addLast("is");
-        list.addLast(" a Software Enginner");
+        list.addLast("a Software Enginner");
+        list.printList();
+        list.addMiddle(4,"is");
         list.printList();
         list.deleteFirst();
         list.printList();
