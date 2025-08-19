@@ -133,6 +133,33 @@ public class ScratchLinkedList{
           }
           System.out.println("Node does not present in the list");
         }
+        //reverse a linked list iterative way
+        public void iterativeReverse(){
+           if (Head == null || Head.next == null) {
+              return;
+           }
+           Node prev = Head;
+           Node curr = Head.next;
+           Node next = null;
+           while (curr != null) {
+              next = curr.next;
+              curr.next = prev;
+              prev = curr;
+              curr = next;
+           }
+           Head.next = null;
+           Head = prev;
+        }
+        //reverse a linkedList recursive way
+        public Node recursiveReverse(Node Head){
+          if (Head == null || Head.next == null) {
+            return Head ;
+          }
+          Node newHead = recursiveReverse(Head.next);
+          Head.next.next = Head;
+          Head.next = null;
+          return newHead;
+        }
         //Print Node 
         public void printList(){
             Node currentHead = Head;
@@ -154,24 +181,27 @@ public class ScratchLinkedList{
         //now to make list first we have to create the object of our own class.
 
         ScratchLinkedList list = new ScratchLinkedList();
-
-        list.addFirst("Vishal Singh Kushwaha");
-        list.addFirst("is");
-        list.addFirst("This");
+        
+        list.addFirst("C");
+        list.addFirst("B");
+        list.addFirst("A");
         list.printList();
-        list.addLast("and");
-        list.addLast("he");
-        list.addLast("a Software Enginner");
+        list.addLast("E");
+        list.addLast("F");
+        list.addLast("G");
         list.printList();
-        list.addMiddle(4,"is");
+        list.addMiddle(4,"D");
         list.printList();
         list.deleteFirst();
         list.printList();
         list.deleteLast();
         list.printList();
-        list.searchNode("is");
-        list.deleteMiddle("and");
+        list.searchNode("F");
+        list.deleteMiddle("D");
         list.printList();
         System.out.println(list.getSize());
+        // list.iterativeReverse();
+        list.Head = list.recursiveReverse(list.Head);
+        list.printList();
     }
 }
