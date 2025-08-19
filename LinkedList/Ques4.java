@@ -63,7 +63,7 @@ public class Ques4 {
         // int size = 0;
         // Node current = head;
         // while(current != null){
-        //     size++;
+        //     size++; 
         //     current = current.next;
         // }
         // Node midNode = head;
