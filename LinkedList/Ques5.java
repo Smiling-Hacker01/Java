@@ -47,7 +47,7 @@ public class Ques5 {
         return sb.toString();
     }
     
-    //function to check wethr the cycle exist in a linkedList
+    //function to check wether the cycle exist in a linkedList
     public boolean isCycle(){
         Node hare = head;
         Node turtle = head;
