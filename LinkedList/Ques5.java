@@ -52,11 +52,11 @@ public class Ques5 {
         Node hare = head;
         Node turtle = head;
         while(hare != null && hare.next != null){
+            hare = hare.next.next;
+            turtle = turtle.next;
             if (hare.equals(turtle)) {
                 return true;
             }
-            hare = hare.next.next;
-            turtle = turtle.next;
         }
         return false;
     }
