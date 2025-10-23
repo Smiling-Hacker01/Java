@@ -14,7 +14,7 @@ public class pattern{
 
 // to print a hollow rectangle
 
-class Hollowrec {
+class  Hollowrec {
     static Scanner sc = new Scanner(System.in);
     public static void main( String[] args){
         System.out.println("Enter the Number of Rows:");
@@ -43,8 +43,8 @@ class HalfPyramid{
     public static void main(String[] args){
         System.out.println("Enter the number of rows:");
         int rows = sc.nextInt();
-        for(int i = 0; i < rows; i++ ){
-            for( int j = 0; j <= i; j++ ){
+        for(int k = 0; k < rows; k++ ){
+            for( int j = 0; j <= k; j++ ){
                 System.out.print("*");
             }
             System.out.println();
