@@ -189,7 +189,37 @@ public class AllPatterns {
          System.out.println();
       }
    }
-
+//shape 14 Diagonal square 
+public static void shapeFourTeen(int n){
+    int[][] mat = new int[n][n];
+    int num = 1;
+    for(int sum = 0; sum <= 2 * (n - 1); sum++){ // sum reprsents the sum arr[i][j] => (i+j)
+          //for even diagonal
+          if (sum % 2 == 0) {
+             for(int i = 0; i < n; i++ ){
+               int j = sum - i;
+               if (j >= 0 && j<n) {
+                  mat[i][j] = num++;
+               }
+             }
+          }
+          else{
+            for(int i = n-1; i>=0; i--){
+                int j = sum - i;
+                if (j >= 0 && j < n) {
+                   mat[i][j] = num++;
+                }
+            }
+          }
+    }
+    //to print the matrix
+    for(int i = 0; i < n; i++){
+        for(int j = 0 ; j < n; j++){
+             System.out.print(mat[i][j] + " ");
+        }
+        System.out.println();
+    }
+}
     //main function
     public static void main(String[] args) {
         int n = 5;
@@ -205,7 +235,7 @@ public class AllPatterns {
       // shapeTen(n);
       // shapeEleven(n);
       // shapeTwelve(n);
-      shapeThirteen(n);
-
+      // shapeThirteen(n);
+      shapeFourTeen(4);
     }
 }
