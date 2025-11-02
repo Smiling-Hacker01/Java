@@ -16,7 +16,7 @@ public class Ques4 {
     }
     //main function
     public static void main(String[] args){
-        String str = "vishal";
+        String str = "abba";
        boolean result =  ispalindrome(str);
        System.out.println(result);
     }
